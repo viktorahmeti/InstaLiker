@@ -15,7 +15,7 @@ Using this program is very straightforward:
 You will be prompted to write your username and password, and upon successful login, write the data for the other user. Wait a few seconds and you will get a confirmation that the likes were sent. If not, just wait for the other guy to call you asking why in the world you would like their pictures from 2017.
 
 ## For developers
-This is not a good program. I mean, it's a really bad program. I doesn't use the Graph API for the simple reason that authentication and authorization takes a lot of work on the side of the user.  
+This is not a good program. I mean, it's a really bad program. It doesn't use the Graph API for the simple reason that authentication and authorization takes a lot of work on the side of the user.  
 This script actually starts a headless Chromium browser and navigates directly to the user's profile. Now, by stealing some headers from normal requests, we are able to mimic the running application and call any API we want. The program uses the v1 API to get a list of all the user's posts. This list is paginated so we make many calls until we get to the end of them. After this it's just a matter of making POST requests to first unlike all the posts and then like all of them again.  
 The reason for unliking the posts first is that we want our friend to get 1000 notifications instead of just 10 from the posts you forgot to like.  
 Instagram is smart in blocking such weird usage of their APIs so a random user-agent is generated with each run of the program. *Have Fun*.
