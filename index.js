@@ -16,7 +16,10 @@ greet()
 .then(getPostIds)
 .then(unlikeAllPosts)
 .then(likeAllPosts)
-.then(() => browser.close());
+.then(() => browser.close())
+.catch((e) => {
+  console.log(`An error occurred, try to figure it out:\n\n${e}`);
+});
 
 /**
  * A simple greeting
